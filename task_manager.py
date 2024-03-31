@@ -15,6 +15,17 @@ def reg_user():
     # - Request input of a new username
     new_username = input("New Username: ")
 
+    keys = username_password.keys()
+    name_taken = True
+    while name_taken:
+        if new_username in keys:
+            print(f"ERROR: The username {new_username} is already taken, please choose another.")
+            choice = input("Press return key to try again\n").lower().strip()
+            new_username = input("New Username: ")
+        else:
+            name_taken = False    
+
+
     # - Request input of a new password
     new_password = input("New Password: ")
 
